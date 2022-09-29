@@ -2,20 +2,20 @@
 # from odoo import http
 
 
-# class Bra(http.Controller):
-#     @http.route('/bra/bra/', auth='public')
+# class PrintCertificate(http.Controller):
+#     @http.route('/print_certificate/print_certificate/', auth='public')
 #     def index(self, **kw):
 #         return "Hello, world"
 
-#     @http.route('/bra/bra/objects/', auth='public')
+#     @http.route('/print_certificate/print_certificate/objects/', auth='public')
 #     def list(self, **kw):
-#         return http.request.render('bra.listing', {
-#             'root': '/bra/bra',
-#             'objects': http.request.env['bra.bra'].search([]),
+#         return http.request.render('print_certificate.listing', {
+#             'root': '/print_certificate/print_certificate',
+#             'objects': http.request.env['print_certificate.print_certificate'].search([]),
 #         })
 
-#     @http.route('/bra/bra/objects/<model("bra.bra"):obj>/', auth='public')
+#     @http.route('/print_certificate/print_certificate/objects/<model("print_certificate.print_certificate"):obj>/', auth='public')
 #     def object(self, obj, **kw):
-#         return http.request.render('bra.object', {
+#         return http.request.render('print_certificate.object', {
 #             'object': obj
 #         })

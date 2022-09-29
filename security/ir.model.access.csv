@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bra_bra,bra.bra,model_bra_bra,base.group_user,1,1,1,1
+access_print_certificate,print.certificate,model_print_certificate,base.group_user,1,1,1,1
+

@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class bra(models.Model):
-#     _name = 'bra.bra'
-#     _description = 'bra.bra'
+class Certificate(models.Model):
+    _name = 'print_certificate'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _rec_name = 'name'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    name = fields.Char(string="Template")
+    template = fields.Html(string="Certificate Content")
+
+
+class Cert(models.Model):
+    _inherit = 'hr.employee'
+
+    tem = fields.Many2one('print_certificate', string="Certificate content")
+    cer = fields.Html(related="tem.template", string="contact")
