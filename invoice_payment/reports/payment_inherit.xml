@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_report">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <h2 align="center">سند صرف</h2>
+                    <br></br>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-10" style="float: right;">
+                                <t t-esc="doc.date"/>
+                                :
+                                <strong>التاريخ</strong>
+                            </div>
+                            <div class="col-2" style="float: right;">
+                                <strong style="float: right;">المبلغ</strong>
+                                <br/>
+                                <input style="width:115px; height=60px;" t-att-value="doc.amount"></input>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div style="float: right;">
+                            <strong>اصرفوا الي السيد الاستاذ</strong>
+                            :
+                            <t t-esc="doc.partner_id.name"/>
+                        </div>
+                        <br></br>
+                        <div style="float: right;">
+                            <t t-esc="doc.amount"/>
+                            :
+                            <strong>مبلغ وقدره</strong>
+                            <br></br>
+                        </div>
+                        <br></br>
+                        <div style="float: right;">
+                            <strong>وذلك مبلغ مقابل</strong>
+                            :
+                            <t t-esc="doc.ref"/>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <strong style="float: right;">: المستلم</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3" style="float: right;">
+                                <strong style="float: right;">: المحاسب</strong>
+                                <p style="float: right;">
+                                    <t t-esc="doc.partner_id.name"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="Receipt_report">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <h2 align="center">سند صرف</h2>
+                    <br></br>
+                    <div class="page">
+                        <table class="table">
+                             <div class="oe_structure">
+                            <div class="row">
+                                <div class="col-10" style="float: right;">
+                                    <t t-esc="doc.date"/>
+                                    :
+                                    <strong>التاريخ</strong>
+                                </div>
+                                <div class="col-2" style="float: right;">
+                                    <strong style="float: right;">المبلغ</strong>
+                                    <br/>
+                                    <input style="width:115px; height=60px;" t-att-value="doc.amount"></input>
+                                </div>
+                            </div>
+                            <br></br>
+                            <div style="float: right;">
+                                <strong>اصرفوا الي السيد الاستاذ</strong>
+                                :
+                                <t t-esc="doc.partner_id.name"/>
+                            </div>
+                            <br></br>
+                            <div style="float: right;">
+                                <t t-esc="doc.amount"/>
+                                :
+                                <strong>مبلغ وقدره</strong>
+                                <br></br>
+                            </div>
+                            <br></br>
+                            <div style="float: right;">
+                                <strong>وذلك مبلغ مقابل</strong>
+                                :
+                                <t t-esc="doc.ref"/>
+                            </div>
+                            <br></br>
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <strong style="float: right;">: المستلم</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="float: right;">
+                                    <strong style="float: right;">: المحاسب</strong>
+                                    <p style="float: right;">
+                                        <t t-esc="doc.partner_id.name"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

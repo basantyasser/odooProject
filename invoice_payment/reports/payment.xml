@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <report
+        id="report_payment_view"
+        model="account.payment"
+        string='Payment Voucher'
+        name="invoice_payment.payment_report"
+        file="invoice_payment.payment_report"
+        report_type="qweb-pdf" />
+
+     <report
+        id="report_receipt_view"
+        model="account.payment"
+        string='Receipt Voucher'
+        name="invoice_payment.Receipt_report"
+        file="invoice_payment.Receipt_report"
+        report_type="qweb-pdf" />
+
+</data>
+</odoo>
